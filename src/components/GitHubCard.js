@@ -4,7 +4,7 @@ const GitHubCard = (props) =>{
     
     return(
         <Card style={{ width: '18rem' }}>
-        <Card.Img variant="top" src={props.imageSrc} role='cardImage' />
+        <Card.Img variant="top" src={props.imageSrc} role='cardImage' alt="profile picture" />
         <Card.Body>
           <Card.Title>Card Title</Card.Title>
           <Card.Text>

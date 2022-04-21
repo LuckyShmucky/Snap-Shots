@@ -10,6 +10,7 @@ exports[`renders snapshot of github card 1`] = `
   }
 >
   <img
+    alt="profile picture"
     className="card-img-top"
     role="cardImage"
   />

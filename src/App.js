@@ -7,15 +7,14 @@ import GitHubCard from './components/GitHubCard';
 function App() {
  
 
-const [myName, setMyName] = useState('')
+const [gitHubName, setGitHubName] = useState('')
 const [imageSrc, setImageSrc] = useState('')
 
-useEffect( ()=>{
-  
+useEffect( ()=>{ 
   fetch('https://api.github.com/users/LuckyShmucky')
   .then(res => res.json())
   .then(data =>{
-    setMyName(data.name)
+    setGitHubName(data.name)
     setImageSrc(data.avatar_url)
   })
 
@@ -25,7 +24,7 @@ useEffect( ()=>{
 
   return (
     <div className="App">
-      <h2 titlef="name-header">{myName}</h2>
+      <h2>{gitHubName}</h2>
       <GitHubCard imageSrc={imageSrc}/>
     </div>
   );

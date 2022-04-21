@@ -4,9 +4,7 @@ exports[`renders a snapshot for app component 1`] = `
 <div
   className="App"
 >
-  <h2
-    titlef="name-header"
-  />
+  <h2 />
   <div
     className="card"
     style={
@@ -16,6 +14,7 @@ exports[`renders a snapshot for app component 1`] = `
     }
   >
     <img
+      alt="profile picture"
       className="card-img-top"
       role="cardImage"
       src=""

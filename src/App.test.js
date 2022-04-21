@@ -11,11 +11,16 @@ beforeEach(() => {
 
 
 
-test("receives GitHub name", async () => {
-  fetch.mockResponseOnce(JSON.stringify({name: 'Christian Luciano'}))
-  render(<App />)
-  const gitHubName = await waitFor(() => screen.getByTitle('name-header'))
-  expect(gitHubName.textContent).toBe('Christian Luciano')
+describe('recieves data from github REST API using jest fetch mock', ()=>{
+
+  
+  test("receives GitHub name", async () => {
+    fetch.mockResponseOnce(JSON.stringify({name: 'Christian'}))
+    render(<App />)
+    const gitHubName = await screen.findByRole('heading', {level: 2})
+    expect(gitHubName).toBeInTheDocument()
+  })
+
 })
 
 
@@ -23,7 +28,6 @@ test("receives GitHub name", async () => {
 ///This is not working anymore for some reason 
 test('renders a snapshot for app component', () => {
  const tree = renderer.create(<App/>).toJSON()
- 
  expect(tree).toMatchSnapshot()
 });
 
